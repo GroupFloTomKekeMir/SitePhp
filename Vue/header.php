@@ -20,7 +20,7 @@
         <ul class="nav navbar-nav">  
             <li><a href="./index.php"><i class="glyphicon glyphicon-home"></i>  Megacasting</a></li>
             <li><a href="./musique.php">Musique</a></li>
-            <li><a href="#">Evenement</a></li>
+            <li><a href="./evenement.php">Evenement</a></li>
           <li><a href="./casting2.php">Casting</a></li>
         <li><a href="#">Spectacle</a></li>
         </ul>

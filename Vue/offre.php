@@ -13,7 +13,7 @@ while ($row = $query->fetch()) {
     <div class="container"  style="margin-left: 40%; margin-right: 40%; text-align: center;">
         <div class="row">
             <div class="col-lg-3">
-                <li> <p> Titre :</p></li>                       
+                <li> <p> Titre : <?php echo $row['titre']  ?></p></li>                       
                 <li> <p> Métier :   <?php echo $id_metier ?></p> </li>
                 <li> <p> Contrat :  <?php echo $row['id_contrat'] ?> </p> </li>
                 <li> <p> Référence :  <?php echo $row['reference'] ?> </p> </li>
