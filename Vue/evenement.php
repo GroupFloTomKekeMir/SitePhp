@@ -57,7 +57,6 @@
         $(".eve").click(function () {
 
             var valEvenement = $(this).val();
-            alert(valEvenement);
 
             $.ajax({
                 method: "GET",
@@ -66,10 +65,8 @@
                 dataType: 'html',
                 success: function (data) {
                     
-                    if(!marker) {
-                       alert("il y a un marker"); 
+                    if(!marker) { 
                     } else {
-                        alert("il n'y a pas de marker");
                         marker.setMap(null);
                     }
                       

@@ -40,6 +40,7 @@
               <li><a href="./connexion.php">Connexion</a></li>
               <li><a href="./inscription.php">Inscription</a></li>
                <?php } else { ?>
+              <li><a id="profil" href="./profil.php">Profil</a></li>
               <li><a id="deco2" href="#">Deconnexion</a></li>
             <!-- <li><button id="deco2" value="test">Deconnexion</button></li>-->
                <?php } ?>
