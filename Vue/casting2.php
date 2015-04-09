@@ -1,6 +1,5 @@
 <?php
 
-session_start();
 include('header.php');
 include('../php/connexionBdd.php');
 ?>

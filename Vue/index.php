@@ -1,6 +1,6 @@
-<?php session_start(); include('header.php'); ?>
+<?php  include('header.php'); ?>
 
-
+ <?php var_dump($_SESSION['id']) ?>
  <style type="text/css">
             /* bootstrap 3 helpers */
 

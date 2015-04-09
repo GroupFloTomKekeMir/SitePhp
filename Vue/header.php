@@ -1,4 +1,4 @@
-<?php //session_start(); ?>
+<?php session_start(); ?>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -36,6 +36,7 @@
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i> <i class="glyphicon glyphicon-chevron-down"></i></a>
             <ul class="dropdown-menu">
+               
                <?php if(!isset($_SESSION['id'])){ ?> 
               <li><a href="./connexion.php">Connexion</a></li>
               <li><a href="./inscription.php">Inscription</a></li>

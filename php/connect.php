@@ -18,7 +18,7 @@ include('connexionBdd.php');
 	{
 	    $_SESSION['pseudo'] = $data['nom_artiste'];
 	    $_SESSION['id'] = $data['id_util'];
-            
+           
             header ('location: ../Vue/index.php');
            
 	}
