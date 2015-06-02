@@ -1,11 +1,23 @@
 <?php include('header.php'); ?>
 <?php include('../php/connexionBdd.php'); ?>
+<html>
+    <head>
+        <title>Musique</title>
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+        <meta charset="utf-8">
+    </head>
+    <body>
 
-<div class="row" style="margin-top: 150px;">     
+<div class="row titreMusique">
+    <div class="col-lg-offset-3 col-lg-6">
+        <h1>Musique</h1>
+    </div>
+</div>
+<div class="row rechercheMusique">     
     <div class="col-lg-offset-3 col-lg-6">    
         <div class="row">            
             <div class="col-lg-2">            
-                <p id="recherche">Recherche  </p>       
+                <p id="recherche">Recherche </p>       
             </div>    
             <form method="POST" action="">
                 <div class="col-lg-1">
@@ -48,26 +60,26 @@
 
 </div>
 <br/>
-<div class="container" style="background-color : #fff;">
-  <!--  <div class="row">
-        <div col-lg-11>
-            <div class="col-lg-3">
-                <iframe width="270" height="190" src="https://www.youtube.com/embed/zzXGkSxm4ws" frameborder="0" allowfullscreen></iframe>
-            </div>
-            <div class=" col-lg-2">
-                <p>Musique</p>
-            </div> 
-            <div class=" col-lg-2">
-                <p>Rap</p>
-            </div> 
-            <div class=" col-lg-2">
-                <p>orem ipsum dolor sit amet, consectetur adipiscing elit. Proin luctus magna sit amet justo ultricies tristique. Nibus eros eget imperdiet tempor. Etiam pretium erat non ipsum sodales posuere. Maecenas eu bibendum arcu, sed aliquam arcu.</p>
-            </div> 
-            <div class=" col-lg-2">
-                <p>20/08/088</p>
-            </div> 
-        </div>
-    </div>-->
+<div class="container" style="background-color : red;">
+    <!--  <div class="row">
+          <div col-lg-11>
+              <div class="col-lg-3">
+                  <iframe width="270" height="190" src="https://www.youtube.com/embed/zzXGkSxm4ws" frameborder="0" allowfullscreen></iframe>
+              </div>
+              <div class=" col-lg-2">
+                  <p>Musique</p>
+              </div> 
+              <div class=" col-lg-2">
+                  <p>Rap</p>
+              </div> 
+              <div class=" col-lg-2">
+                  <p>orem ipsum dolor sit amet, consectetur adipiscing elit. Proin luctus magna sit amet justo ultricies tristique. Nibus eros eget imperdiet tempor. Etiam pretium erat non ipsum sodales posuere. Maecenas eu bibendum arcu, sed aliquam arcu.</p>
+              </div> 
+              <div class=" col-lg-2">
+                  <p>20/08/088</p>
+              </div> 
+          </div>
+      </div>-->
     <!------------------------------------>
     <!------------------------------------>
 
@@ -79,31 +91,48 @@
     while ($row = $query->fetch()) {
         ?>  
 
-        <div class="row">
-            <div col-lg-11>
-                <div class="col-lg-3">
-                    <iframe width="270" height="190" src="https://<?php echo $row['lien_yt'] ?>" frameborder="0" allowfullscreen></iframe>
-                </div>
-                <div class=" col-lg-2">
-                    <p><?php echo $row['titre'] ?></p>
-                </div> 
-                <div class=" col-lg-2">
-                    <p><?php echo $row['genre'] ?></p>
-                </div> 
-                <div class=" col-lg-2">
-                    <p><?php echo $row['description'] ?></p>
-                </div> 
-                <div class=" col-lg-2">
-                    <p><?php echo $row['date_ajout'] ?></p>
-                </div> 
+
+        <div class="row corpsMusique">
+            <div class="col-lg-offset-2 col-lg-3">
+                <iframe src="https://<?php echo $row['lien_yt'] ?>" frameborder="0" allowfullscreen></iframe>
             </div>
 
-        </div>
+            <div class="col-lg-6">
+                <div class="row">           
+                    <div class="col-lg-offset-1 col-lg-10">
+                        <p><?php echo $row['titre'] ?></p>
+                    </div>                    
+                </div>
+                <div class="row">
+                    <div class="col-lg-offset-1 col-lg-10">
+                        <p>#<?php echo $row['genre'] ?></p>
+                    </div>                    
+                </div>
+                <div class="row">
+                    <div class="col-lg-offset-1 col-lg-10">
+                        <p><?php echo $row['description'] ?></p>
+                    </div>                    
+                </div>
+                <div class="row">
+                    <div class="col-lg-offset-1 col-lg-10">
+                        <p>Date d'ajoût : <?php echo $row['date_ajout'] ?></p>
+                    </div>                    
+                </div>
 
+
+                <div class="row">
+                    <div class="col-lg-offset-3 col-lg-6 traitMusique"></div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-offset-3 col-lg-6 traitMusique"></div>
+            </div>
+        </div>
         <?php
     }
     ?>
-    <!------------------------------------>
-    <!------------------------------------>
 
 </div>
+</body>
+</html>

@@ -1,4 +1,11 @@
 <?php session_start(); include('header.php'); ?>
+<html>
+    <head>
+        <title>Mégacasting</title>
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+        <meta charset="utf-8">
+    </head>
+    <body>
   <div class="container">
 	<div class="row">
       <div class=" col-lg-12">

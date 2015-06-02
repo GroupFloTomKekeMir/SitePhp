@@ -1,10 +1,16 @@
 <?php include('header.php'); ?>
 <?php include('../php/connexionBdd.php'); ?>
-
-<div class="container" style="background-color : #fff;">
+<html>
+    <head>
+        <title>Casting</title>
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+        <meta charset="utf-8">
+    </head>
+    <body>
+    <div class="container" style="background-color : #fff;">
 
     <h3> Mes informations personnelles </h3>
-    <div id="test"></div>
+    
     <hr>
     <?php
     $query = $bdd->prepare('SELECT `id_util`, `login`, `password`, `nom`, `prenom`, `nom_artiste`, `age`, `mail`, `telephone`, `id_adresse`, `descr_util` FROM `utilisateur` WHERE id_util = ?');
@@ -14,9 +20,11 @@
         $query = $bdd->prepare('SELECT `numero`, `code_postal`, `rue`, `ville`, `latitude`, `longitude` FROM `adresse` WHERE `id_adr`= ?');
         $query->execute(array($row['id_adresse']));
         while ($row2 = $query->fetch()) {
-            ?>
+    ?>
             <input type="hidden" id="id_util" value="<?php echo $_SESSION['id'] ?>" />
-             <input type="hidden" id="id_adr" value="<?php echo $row['id_adresse'] ?>" />
+            <input type="hidden" id="id_adr" value="<?php echo $row['id_adresse'] ?>" />
+            <div class="row">
+                <div class="col-offset-lg-4 col-lg-4">
             <div class="row">
                 <div class="col-lg-1">
                     <label for="nom">Nom:</label>
@@ -24,8 +32,6 @@
                 <div class="col-lg-2">
                     <input type="text" id="nom" value="<?php echo $row['nom'] ?>" />
                 </div>
-
-
             </div>
             <div class="row">
                 <div class="col-lg-1">
@@ -121,8 +127,11 @@
 
 
 
-</div>
-
+        </div>
+    </div>
+    </div>
+</body>
+</html>
 <script>
 
     $(document).ready(function () {
